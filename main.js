@@ -87,7 +87,7 @@ function calcularResultado() {
         return;
     }
 
-    resultado.textContent = 'Total: ' + total;
+    resultado.innerHTML = 'Total: ' + total;
 
     const nombre = document.getElementById('nombre-nino').value;
     const edad = parseInt(document.getElementById('edad').value, 10);
@@ -113,6 +113,8 @@ function calcularResultado() {
     const diagnostico = sospecha ?
         'Sospecha de d\u00e9ficit de atenci\u00f3n con hiperactividad.' :
         'Sin sospecha de d\u00e9ficit de atenci\u00f3n con hiperactividad.';
+
+    resultado.innerHTML += '<br>Diagn\u00f3stico: ' + diagnostico;
 
     const recomendaciones = sospecha ? `
         <ul>
