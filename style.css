@@ -4,6 +4,15 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Contenedor principal para poder mover el formulario */
+#content {
+    max-width: 600px;
+}
+
+#content.right-block {
+    margin-left: auto;
+}
+
 form.card {
     max-width: 600px;
     background: #fff;

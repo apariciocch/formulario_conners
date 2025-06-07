@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="titulo">Cuestionario de Conducta de CONNERS para PROFESORES</h1>
-    <div class="tabs">
-        <button id="tab-profesores" class="tab active" data-tipo="profesores">Profesores</button>
-        <button id="tab-padres" class="tab" data-tipo="padres">Padres</button>
-    </div>
-    <p id="instrucciones"></p>
-    <form id="conners-form" class="card">
+    <div id="content">
+        <h1 id="titulo">Cuestionario de Conducta de CONNERS para PROFESORES</h1>
+        <div class="tabs">
+            <button id="tab-profesores" class="tab active" data-tipo="profesores">Profesores</button>
+            <button id="tab-padres" class="tab" data-tipo="padres">Padres</button>
+        </div>
+        <p id="instrucciones"></p>
+        <form id="conners-form" class="card">
         <div class="form-group">
             <label for="nombre-nino">Nombre completo del ni&ntilde;o:</label>
             <input type="text" id="nombre-nino" name="nombreNino" required>
@@ -65,7 +66,8 @@
         <button type="button" id="calcular">Calcular</button>
     </form>
 
-    <p id="resultado"></p>
+        <p id="resultado"></p>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
