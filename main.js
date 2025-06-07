@@ -93,6 +93,10 @@ function calcularResultado() {
     const edad = parseInt(document.getElementById('edad').value, 10);
     const sexoInput = document.querySelector('input[name="sexo"]:checked');
     const sexo = sexoInput ? sexoInput.value : '';
+    const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+    const gradoEscolar = document.getElementById('grado-escolar').value;
+    const nombreApoderado = document.getElementById('nombre-apoderado').value;
+    const parentesco = document.getElementById('parentesco').value;
     const fecha = document.getElementById('fecha').value;
     const derivadoPor = document.getElementById('derivado-por').value;
     const evaluador = document.getElementById('evaluador').value;
@@ -130,7 +134,12 @@ function calcularResultado() {
         <h2>INFORME</h2>
         <h3>DATOS DE FILIACI\u00d3N</h3>
         <p>Apellidos y nombres: ${nombre}</p>
+        <p>Sexo: ${sexo}</p>
+        <p>Fecha de nacimiento: ${fechaNacimiento}</p>
         <p>Edad: ${edad}</p>
+        <p>Grado escolar: ${gradoEscolar}</p>
+        <p>Nombre del apoderado: ${nombreApoderado}</p>
+        <p>Parentesco: ${parentesco}</p>
         <p>Fecha de Evaluaci\u00f3n: ${fecha}</p>
         <p>Derivado por: ${derivadoPor}</p>
         <p>Evaluado por: ${evaluador}</p>
