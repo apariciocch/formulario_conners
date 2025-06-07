@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cuestionario de Conducta de CONNERS</h1>
+    <h1 id="titulo">Cuestionario de Conducta de CONNERS para PROFESORES</h1>
+    <div class="form-group">
+        <label for="tipo">Seleccione el cuestionario:</label>
+        <select id="tipo">
+            <option value="profesores">Profesores</option>
+            <option value="padres">Padres</option>
+        </select>
+    </div>
+    <p id="instrucciones"></p>
     <form id="conners-form" class="card">
         <div class="form-group">
             <label for="nombre">Apellidos y nombres:</label>
