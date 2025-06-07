@@ -103,10 +103,10 @@ function calcularResultado() {
     const derivadoA = document.getElementById('derivado-a').value;
 
     let sospecha = false;
-    if (sexo === 'Masculino' && edad >= 6 && edad <= 11 && total > 17) {
+    if (sexo === 'Masculino' && edad >= 6 && edad <= 11 && total >= 17) {
         sospecha = true;
     }
-    if (sexo === 'Femenino' && edad >= 6 && edad <= 11 && total > 12) {
+    if (sexo === 'Femenino' && edad >= 6 && edad <= 11 && total >= 12) {
         sospecha = true;
     }
 
