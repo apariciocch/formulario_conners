@@ -77,7 +77,7 @@ function seleccionarTipo(tipo) {
         tabProfesores.classList.remove('active');
         tabPadres.classList.add('active');
         document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PADRES';
-        document.getElementById('instrucciones').textContent = 'Asigne puntos a cada respuesta: Nada = 0, Poco = 1, Bastante = 2, Mucho = 3';
+        document.getElementById('instrucciones').textContent = '';
     } else {
         preguntas = preguntasProfesores;
         tabPadres.classList.remove('active');
