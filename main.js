@@ -78,10 +78,12 @@ function calcularResultado() {
 
     const resultado = document.getElementById('resultado');
     const informe = document.getElementById('informe');
+    const botonDescargar = document.getElementById('descargar');
 
     if (!completo) {
         resultado.textContent = 'Responda todas las preguntas.';
         informe.innerHTML = '';
+        botonDescargar.style.display = 'none';
         return;
     }
 
@@ -144,6 +146,22 @@ function calcularResultado() {
         <h3>RECOMENDACIONES</h3>
         ${recomendaciones}
     `;
+
+    botonDescargar.style.display = 'block';
+}
+
+function descargarWord() {
+    const contenido = document.getElementById('informe').innerHTML;
+    const html = `<html><head><meta charset="utf-8"></head><body>${contenido}</body></html>`;
+    const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'informe.doc';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
 }
 
 
@@ -174,3 +192,4 @@ document.getElementById('tab-padres').addEventListener('click', () => selecciona
 seleccionarTipo('profesores');
 
 document.getElementById('calcular').addEventListener('click', calcularResultado);
+document.getElementById('descargar').addEventListener('click', descargarWord);
