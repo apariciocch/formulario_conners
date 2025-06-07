@@ -1,10 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #f4f4f4;
 }
 
-form {
-    max-width: 500px;
+form.card {
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .form-group {
@@ -16,7 +21,9 @@ label {
     margin-bottom: 5px;
 }
 
-input {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -24,4 +31,21 @@ input {
 
 button {
     padding: 10px 20px;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #eaeaea;
 }

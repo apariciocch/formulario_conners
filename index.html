@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Cuestionario de Conducta de CONNERS</h1>
-    <form id="conners-form">
+    <form id="conners-form" class="card">
         <div class="form-group">
             <label for="nombre">Apellidos y nombres:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -33,9 +33,11 @@
             <label for="derivado-a">Derivado a:</label>
             <input type="text" id="derivado-a" name="derivadoA">
         </div>
-        <button type="submit">Enviar</button>
+        <div id="cuestionario"></div>
+        <button type="button" id="calcular">Calcular</button>
     </form>
 
+    <p id="resultado"></p>
     <script src="main.js"></script>
 </body>
 </html>
