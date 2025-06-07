@@ -1,4 +1,4 @@
-const preguntas = [
+const preguntasProfesores = [
     'Tiene excesiva inquietud motora.',
     'Tiene explosiones impredecibles de mal genio.',
     'Se distrae facilmente, tiene escasa atencion.',
@@ -11,8 +11,24 @@ const preguntas = [
     'Sus esfuerzos se frustran facilmente.'
 ];
 
+const preguntasPadres = [
+    'Es impulsivo, irritable.',
+    'Es llor\u00f3n/a.',
+    'Es m\u00e1s movido de lo normal.',
+    'No puede estarse quieto/a.',
+    'Es destructor (ropas, juguetes, otros objetos).',
+    'No acaba las cosas que empieza',
+    'Se distrae f\u00e1cilmente, tiene escasa atenci\u00f3n.',
+    'Cambia bruscamente sus estados de \u00e1nimo.',
+    'Sus esfuerzos se frustran f\u00e1cilmente.',
+    'Suele molestar frecuentemente a otros ni\u00f1os.'
+];
+
+let preguntas = preguntasProfesores;
+
 function crearCuestionario() {
     const contenedor = document.getElementById('cuestionario');
+    contenedor.innerHTML = '';
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     thead.innerHTML = '<tr><th>Pregunta</th><th>Nada</th><th>Poco</th><th>Bastante</th><th>Mucho</th></tr>';
@@ -46,11 +62,24 @@ function calcularResultado() {
         if (seleccionado) total += parseInt(seleccionado.value, 10);
     }
     const resultado = document.getElementById('resultado');
-    const mensajeNiños = 'Para los niños entre 6 y 11 años: una puntuación >17 es sospecha de déficit de atención con hiperactividad.';
+    const mensajeNiños = 'Para los niños entre 6 y 11 años: una puntuación >16 es sospecha de déficit de atención con hiperactividad.';
     const mensajeNiñas = 'Para las niñas entre 6 y 11 años: una puntuación >12 es sospecha de déficit de atención con hiperactividad.';
     resultado.innerHTML = 'Total: ' + total + '<br>' + mensajeNiños + '<br>' + mensajeNiñas;
 }
 
 crearCuestionario();
+
+document.getElementById('tipo').addEventListener('change', (e) => {
+    if (e.target.value === 'padres') {
+        preguntas = preguntasPadres;
+        document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PADRES';
+        document.getElementById('instrucciones').textContent = 'Asigne puntos a cada respuesta: Nada = 0, Poco = 1, Bastante = 2, Mucho = 3';
+    } else {
+        preguntas = preguntasProfesores;
+        document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PROFESORES';
+        document.getElementById('instrucciones').textContent = '';
+    }
+    crearCuestionario();
+});
 
 document.getElementById('calcular').addEventListener('click', calcularResultado);
