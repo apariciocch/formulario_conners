@@ -66,7 +66,7 @@ function calcularResultado() {
     let completo = true;
     for (let i = 1; i <= preguntas.length; i++) {
         const seleccionado = document.querySelector('input[name="p' + i + '"]:checked');
-        const mensaje = document.querySelector('#cuestionario tr:nth-child(' + i + ') .mensaje-error');
+        const mensaje = document.querySelector('#cuestionario tbody tr:nth-child(' + i + ') .mensaje-error');
         if (!seleccionado) {
             completo = false;
             if (mensaje) mensaje.style.display = 'inline';
