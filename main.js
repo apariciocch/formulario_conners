@@ -67,19 +67,32 @@ function calcularResultado() {
     resultado.innerHTML = 'Total: ' + total + '<br>' + mensajeNiños + '<br>' + mensajeNiñas;
 }
 
-crearCuestionario();
 
-document.getElementById('tipo').addEventListener('change', (e) => {
-    if (e.target.value === 'padres') {
+function seleccionarTipo(tipo) {
+    const tabProfesores = document.getElementById('tab-profesores');
+    const tabPadres = document.getElementById('tab-padres');
+
+    if (tipo === 'padres') {
         preguntas = preguntasPadres;
+        tabProfesores.classList.remove('active');
+        tabPadres.classList.add('active');
         document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PADRES';
         document.getElementById('instrucciones').textContent = 'Asigne puntos a cada respuesta: Nada = 0, Poco = 1, Bastante = 2, Mucho = 3';
     } else {
         preguntas = preguntasProfesores;
+        tabPadres.classList.remove('active');
+        tabProfesores.classList.add('active');
         document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PROFESORES';
         document.getElementById('instrucciones').textContent = '';
     }
+
     crearCuestionario();
-});
+}
+
+document.getElementById('tab-profesores').addEventListener('click', () => seleccionarTipo('profesores'));
+document.getElementById('tab-padres').addEventListener('click', () => seleccionarTipo('padres'));
+
+// Inicializa con la pestaña de profesores
+seleccionarTipo('profesores');
 
 document.getElementById('calcular').addEventListener('click', calcularResultado);

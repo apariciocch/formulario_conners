@@ -8,12 +8,9 @@
 </head>
 <body>
     <h1 id="titulo">Cuestionario de Conducta de CONNERS para PROFESORES</h1>
-    <div class="form-group">
-        <label for="tipo">Seleccione el cuestionario:</label>
-        <select id="tipo">
-            <option value="profesores">Profesores</option>
-            <option value="padres">Padres</option>
-        </select>
+    <div class="tabs">
+        <button id="tab-profesores" class="tab active" data-tipo="profesores">Profesores</button>
+        <button id="tab-padres" class="tab" data-tipo="padres">Padres</button>
     </div>
     <p id="instrucciones"></p>
     <form id="conners-form" class="card">
