@@ -89,7 +89,8 @@ function calcularResultado() {
 
     const nombre = document.getElementById('nombre-nino').value;
     const edad = parseInt(document.getElementById('edad').value, 10);
-    const sexo = document.getElementById('sexo').value;
+    const sexoInput = document.querySelector('input[name="sexo"]:checked');
+    const sexo = sexoInput ? sexoInput.value : '';
     const fecha = document.getElementById('fecha').value;
     const derivadoPor = document.getElementById('derivado-por').value;
     const evaluador = document.getElementById('evaluador').value;
