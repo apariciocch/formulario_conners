@@ -4,17 +4,13 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Contenedor principal para poder mover el formulario */
+/* Contenedor principal ocupa todo el ancho */
 #content {
-    max-width: 600px;
-}
-
-#content.right-block {
-    margin-left: auto;
+    width: 100%;
 }
 
 form.card {
-    max-width: 600px;
+    width: 100%;
     background: #fff;
     padding: 20px;
     border-radius: 8px;

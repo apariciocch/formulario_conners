@@ -71,22 +71,18 @@ function calcularResultado() {
 function seleccionarTipo(tipo) {
     const tabProfesores = document.getElementById('tab-profesores');
     const tabPadres = document.getElementById('tab-padres');
-    const content = document.getElementById('content');
-
     if (tipo === 'padres') {
         preguntas = preguntasPadres;
         tabProfesores.classList.remove('active');
         tabPadres.classList.add('active');
         document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PADRES';
         document.getElementById('instrucciones').textContent = '';
-        content.classList.add('right-block');
     } else {
         preguntas = preguntasProfesores;
         tabPadres.classList.remove('active');
         tabProfesores.classList.add('active');
         document.getElementById('titulo').textContent = 'Cuestionario de Conducta de CONNERS para PROFESORES';
         document.getElementById('instrucciones').textContent = '';
-        content.classList.remove('right-block');
     }
 
     crearCuestionario();
